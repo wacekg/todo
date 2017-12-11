@@ -1,1 +1,16 @@
 <h1>Dodaj</h1>
+ <%= form_for @task do |f| %> <!--pętla po taskach po zapisie nowe dodaj ?-->
+  <p>
+    <%= f.label :title %>   <!--zapis etykiety tytułu - konieczne?-->
+    <%= f.text_field :title %> <!--zapis tytułu - treść-->
+  </p>
+
+  <p>
+    <%= f.label :content %>  <!--zapis etykiety zadania - konieczne?-->
+    <%= f.text_area :content %>  <!--zapis zadania - treść-->
+  </p>
+
+  <p>
+    <%= f.submit %> <!--nie wiem-->
+  </p>
+<% end %>
