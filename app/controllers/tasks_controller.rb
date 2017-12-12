@@ -13,8 +13,10 @@ class TasksController < ApplicationController
   def update
   end
   def destroy
-    @task.destroy
-    redirect_to task_path
+    # binding.pry
+    @task = Task.find(params[:id]) #wskazanie taska do usunięcia - nie działa
+    @task.destroy                  #usunięcia (.destroy - metoda railaów ?)
+    redirect_to task_path          # aktualizacja ścieżek w routes ?
   end
   def show
     @task = Task.find(params[:id])
