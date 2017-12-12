@@ -17,6 +17,6 @@ class TasksController < ApplicationController
     redirect_to task_path
   end
   def show
-    @task = Task.where() #warunek wybranego taska lub .find(Id wybranego taska)
+    @task = Task.find(params[:id])
   end
 end

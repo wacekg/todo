@@ -2,8 +2,8 @@
 <% @tasks.each do |task| %>
  <h3>
 
-   <%= link_to (task.title, task.created_at), task_path(task) %> <!--jak wyświetlić treść i datę-->
-   <%= link_to 'Usuń' task_path(task)%>
-   <%= link_to 'Pokaż' task_path(task)%> <!--ścieżka do taska to chyba za mało-->
+   <%= link_to "#{task.title}, #{task.created_at}", task_path(task) %>
+   <%= link_to 'Pokaż', task_path(task)%>
+   <%= link_to 'Usuń', task_path(task), method: :delete %>
  </h3>
 <% end %>
