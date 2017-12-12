@@ -1,0 +1,16 @@
+<h1>Zmkień</h1>
+ <%= form_for @task do |f| %>
+  <p>
+    <%= f.label :title %>   <!--1 okno intarakcji z użytkownikiem-->
+    <%= f.text_field :title %> <!--format 2 okna-->
+  </p>
+
+  <p>
+    <%= f.label :content %>  <!--2 okno intarakcji z użytkownikiem-->
+    <%= f.text_area :content %>  <!--format 2 okna-->
+  </p>
+
+  <p>
+    <%= f.submit %> <!--nie wiem-->
+  </p>
+<% end %>

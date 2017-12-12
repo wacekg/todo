@@ -1,9 +1,12 @@
 <h1>Strona główna</h1>
+<h3>
+  <%= link_to 'Dodaj nowe zadanie', new_task_path %>
+</h3>
 <% @tasks.each do |task| %>
- <h3>
-
-   <%= link_to "#{task.title}, #{task.created_at}", task_path(task) %>
-   <%= link_to 'Pokaż', task_path(task)%>
-   <%= link_to 'Usuń', task_path(task), method: :delete %>
- </h3>
+  <h4>
+    <%= link_to "#{task.title}, #{task.created_at}", task_path(task) %>
+    <%= link_to 'Pokaż', task_path(task)%>
+    <%= link_to 'Zmień', edit_task_path(task)%>
+    <%= link_to 'Usuń', task_path(task), method: :delete %>
+  </h4>
 <% end %>
