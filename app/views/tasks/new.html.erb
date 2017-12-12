@@ -1,13 +1,13 @@
 <h1>Dodaj</h1>
- <%= form_for @task do |f| %> <!--pętla po taskach po zapisie nowe dodaj ?-->
+ <%= form_for @task do |f| %>
   <p>
-    <%= f.label :title %>   <!--zapis etykiety tytułu - konieczne?-->
-    <%= f.text_field :title %> <!--zapis tytułu - treść-->
+    <%= f.label :title %>   <!--1 okno intarakcji z użytkownikiem-->
+    <%= f.text_field :title %> <!--format 2 okna-->
   </p>
 
   <p>
-    <%= f.label :content %>  <!--zapis etykiety zadania - konieczne?-->
-    <%= f.text_area :content %>  <!--zapis zadania - treść-->
+    <%= f.label :content %>  <!--2 okno intarakcji z użytkownikiem-->
+    <%= f.text_area :content %>  <!--format 2 okna-->
   </p>
 
   <p>
