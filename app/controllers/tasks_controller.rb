@@ -9,18 +9,23 @@ class TasksController < ApplicationController
     @task = Task.create(params[:task].permit(:title, :content))
   end
   def edit
-    @task = Task.find(params[:id])
+    before_action
   end
   def update
-    @task = Task.find(params[:id])
+    before_action
     @task.update_attributes(params[:task].permit(:title, :content))
   end
   def destroy
-    @task = Task.find(params[:id])
+    before_action
     @task.destroy
     redirect_to action: "index"          # przekierowanie do index
   end
   def show
+    before_action
+  end
+
+  private
+  def before_action
     @task = Task.find(params[:id])
   end
 end
