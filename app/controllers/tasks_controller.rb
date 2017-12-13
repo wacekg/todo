@@ -10,19 +10,15 @@ class TasksController < ApplicationController
     @task = Task.create(params[:task].permit(:title, :content))
   end
   def edit
-    set_task
   end
   def update
-    set_task
     @task.update_attributes(params[:task].permit(:title, :content))
   end
   def destroy
-    set_task
     @task.destroy
     redirect_to action: "index"          # przekierowanie do index
   end
   def show
-    set_task
   end
 
   private
