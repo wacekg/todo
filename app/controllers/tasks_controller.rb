@@ -7,12 +7,12 @@ class TasksController < ApplicationController
     @task = Task.new
   end
   def create
-    @task = Task.create(params[:task].permit(:title, :content))
+    @task = Task.create(tasks_params)
   end
   def edit
   end
   def update
-    @task.update_attributes(params[:task].permit(:title, :content))
+    @task.update_attributes(tasks_params)
   end
   def destroy
     @task.destroy
@@ -24,5 +24,8 @@ class TasksController < ApplicationController
   private
   def set_task
     @task = Task.find(params[:id])
+  end
+  def tasks_params
+    params.require(:task).permit(:title, :content)
   end
 end
