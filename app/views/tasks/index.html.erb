@@ -4,7 +4,7 @@
 </h3>
 <% @tasks.each do |task| %>
   <h4>
-    <%= link_to "#{task.title}, #{task.created_at}", task_path(task) %>
+    <%= link_to " Tytuł: #{task.title}, Dodano: #{task.created_at}", task_path(task) %>
     <%= link_to 'Pokaż', task_path(task)%>
     <%= link_to 'Zmień', edit_task_path(task)%>
     <%= link_to 'Usuń', task_path(task), method: :delete %>

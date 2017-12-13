@@ -16,10 +16,9 @@ class TasksController < ApplicationController
     @task.update_attributes(params[:task].permit(:title, :content))
   end
   def destroy
-    # binding.pry
-    @task = Task.find(params[:id]) #wskazanie taska do usunięcia - nie działa
-    @task.destroy                  #usunięcia (.destroy - metoda railaów ?)
-    redirect_to action: "index"          # aktualizacja ścieżek w routes ?
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to action: "index"          # przekierowanie do index
   end
   def show
     @task = Task.find(params[:id])
