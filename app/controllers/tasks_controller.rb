@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_task, except: [:new, :create, :index]
   def index
     @tasks = Task.all.order(created_at: :desc)
   end
@@ -9,23 +10,23 @@ class TasksController < ApplicationController
     @task = Task.create(params[:task].permit(:title, :content))
   end
   def edit
-    before_action
+    set_task
   end
   def update
-    before_action
+    set_task
     @task.update_attributes(params[:task].permit(:title, :content))
   end
   def destroy
-    before_action
+    set_task
     @task.destroy
     redirect_to action: "index"          # przekierowanie do index
   end
   def show
-    before_action
+    set_task
   end
 
   private
-  def before_action
+  def set_task
     @task = Task.find(params[:id])
   end
 end
